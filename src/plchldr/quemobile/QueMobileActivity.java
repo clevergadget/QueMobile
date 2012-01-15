@@ -43,13 +43,7 @@ public class QueMobileActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-<<<<<<< HEAD
-	
-					if(userProxy.checkLogin(username.getText().toString(), password.getText().toString()))
-					{
-						String yup = "worked";
-					}
-=======
+
 					try {
 						if(UserProxy.checkLogin(username.getText().toString(), password.getText().toString()))
 						{
@@ -66,7 +60,7 @@ public class QueMobileActivity extends Activity {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					};
->>>>>>> adam_branch
+
 					
 
 
