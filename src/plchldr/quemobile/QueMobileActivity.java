@@ -43,11 +43,13 @@ public class QueMobileActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 	
-					userProxy.checkLogin(username.getText().toString(), password.getText().toString());
+					if(userProxy.checkLogin(username.getText().toString(), password.getText().toString()))
+					{
+						
+					}
 					
 
-				
-					responsetext.setText(sb.toString());
+
 
 			
 			}
