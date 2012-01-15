@@ -51,14 +51,20 @@ public class QueMobileActivity extends Activity {
 					loginPost.setEntity(loginForm);
 					HttpResponse response=client.execute(loginPost);
 					InputStream isResponseData = response.getEntity().getContent();
-					InputStreamReader reader = new InputStreamReader(isResponseData);
-					BufferedReader buffer = new BufferedReader(reader);
-					StringBuilder stringBuilder = new StringBuilder();
-					String currentLine = "";
-					while ( (currentLine=buffer.readLine()) != null) {
-						stringBuilder.append(currentLine + "\n");
-					}
-					responsetext.setText(stringBuilder.toString());
+					BufferedReader buffer = new BufferedReader( new InputStreamReader(isResponseData, "UTF-8"));
+				   StringBuilder sb = new StringBuilder();
+				    String s;
+				    while(true )
+				    {
+				        s = buffer.readLine();
+				        if(s==null || s.length()==0)
+				            break;
+				        sb.append(s);
+				
+				    }
+				    buffer.close();
+				    isResponseData.close();
+					responsetext.setText(sb.toString());
 				}catch (Exception e){
 					e.printStackTrace();
 				}
