@@ -1,6 +1,7 @@
 package plchldr.quemobile;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.ParseException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -28,7 +30,6 @@ public class QueMobileActivity extends Activity {
 	EditText password;
 	Button submit;
 	TextView responsetext;
-	UserProxy userProxy;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,11 +43,30 @@ public class QueMobileActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+<<<<<<< HEAD
 	
 					if(userProxy.checkLogin(username.getText().toString(), password.getText().toString()))
 					{
 						String yup = "worked";
 					}
+=======
+					try {
+						if(UserProxy.checkLogin(username.getText().toString(), password.getText().toString()))
+						{
+
+						}
+						else
+						{
+
+						}
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					};
+>>>>>>> adam_branch
 					
 
 
