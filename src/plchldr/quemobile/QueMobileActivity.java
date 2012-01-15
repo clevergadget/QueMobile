@@ -42,11 +42,15 @@ public class QueMobileActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-	
+				String worked;
 					if(userProxy.checkLogin(username.getText().toString(), password.getText().toString()))
 					{
-						
+						worked = "yes";
 					}
+					else
+					{
+					     worked = "no";
+					};
 					
 
 
