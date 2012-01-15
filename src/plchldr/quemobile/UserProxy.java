@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.message.BasicNameValuePair;
 
 public class UserProxy {
@@ -27,6 +28,17 @@ public class UserProxy {
 				
 
     }
+	
+	static public String getQuestionsForUser(String userId) throws ClientProtocolException, IOException
+	{
+		String url = "http://scope-resolution.org/que/scripts/questions_for_user.php";
+		List<NameValuePair> postValues = new ArrayList<NameValuePair>();
+		postValues.add(new BasicNameValuePair("username", ""));
+		postValues.add(new BasicNameValuePair("password", ""));
+		String result = HttpFactory.HttpPostJSON(postValues, url);
+		return result;
+	}
 }
+
 
 
