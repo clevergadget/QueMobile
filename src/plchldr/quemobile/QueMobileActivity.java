@@ -43,7 +43,7 @@ public class QueMobileActivity extends Activity {
 			public void onClick(View v) {
 				try{
 					DefaultHttpClient client = new DefaultHttpClient();
-					HttpPost loginPost = new HttpPost("http://www.scope-resolution.org/que/login.php");
+					HttpPost loginPost = new HttpPost("http://www.scope-resolution.org/que/scripts/login.php");
 					List postValues = new ArrayList();
 					postValues.add(new BasicNameValuePair("username", username.getText().toString()));
 					postValues.add(new BasicNameValuePair("password", password.getText().toString()));

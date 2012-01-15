@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+	android:layout_height="match_parent" android:layout_width="fill_parent">
+    <ImageView android:id="@+id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/quetux" android:layout_gravity="center"></ImageView>
+	<LinearLayout android:id="@+id/linearLayout1"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Username"></TextView>
+	<EditText android:layout_weight="1" android:layout_height="wrap_content"
+		android:id="@+id/username" android:layout_width="fill_parent">
+		<requestFocus></requestFocus>
+	</EditText>
+
+	</LinearLayout>
+	<LinearLayout android:id="@+id/linearLayout2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Password"></TextView>
+		<EditText android:layout_weight="1" android:layout_height="wrap_content" android:id="@+id/password" android:layout_width="wrap_content" android:inputType="textPassword"></EditText>
+	</LinearLayout>
+	<Button android:text="Submit" android:id="@+id/submit" android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="wrap_content"></Button>
+	<TextView android:background="#FF333333" android:text="" android:id="@+id/response" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:layout_marginTop="10dip"></TextView>"
+	
+</LinearLayout>
