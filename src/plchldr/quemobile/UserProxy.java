@@ -22,7 +22,7 @@ public class UserProxy {
 	
 	
 	@SuppressWarnings("unchecked")
-	static public boolean checkLogin(String username, String password)
+	static public boolean checkLogin(String username, String password) throws ParseException, IOException
 	{
 				String url = "http://www.scope-resolution.org/que/scripts/login.php";
 				
@@ -31,16 +31,11 @@ public class UserProxy {
 				postValues.add(new BasicNameValuePair("password", password));
 
 
-				try {
-					return HttpFactory.HttpPostString(postValues, url) == "true" ? true : false;
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				return false;
+			
+					String result =  HttpFactory.HttpPostString(postValues, url);
+					return result.equals("true") ? true : false;
+				
+
     }
 }
 
