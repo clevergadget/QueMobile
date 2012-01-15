@@ -28,6 +28,7 @@ public class QueMobileActivity extends Activity {
 	EditText password;
 	Button submit;
 	TextView responsetext;
+	UserProxy userProxy;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,37 +42,15 @@ public class QueMobileActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				try{
-					DefaultHttpClient client = new DefaultHttpClient();
-					HttpPost loginPost = new HttpPost("http://www.scope-resolution.org/que/scripts/login.php");
-					List postValues = new ArrayList();
-					postValues.add(new BasicNameValuePair("username", username.getText().toString()));
-					postValues.add(new BasicNameValuePair("password", password.getText().toString()));
-					UrlEncodedFormEntity loginForm = new UrlEncodedFormEntity(postValues, HTTP.UTF_8);
-					loginPost.setEntity(loginForm);
-					HttpResponse response=client.execute(loginPost);
-					InputStream isResponseData = response.getEntity().getContent();
-					BufferedReader buffer = new BufferedReader( new InputStreamReader(isResponseData, "UTF-8"));
-				   StringBuilder sb = new StringBuilder();
-				    String s;
-				    while(true )
-				    {
-				        s = buffer.readLine();
-				        if(s==null || s.length()==0)
-				            break;
-				        sb.append(s);
+	
+					userProxy.checkLogin(username.getText().toString(), password.getText().toString());
+					
+
 				
-				    }
-				    buffer.close();
-				    isResponseData.close();
 					responsetext.setText(sb.toString());
-				}catch (Exception e){
-					e.printStackTrace();
-				}
-				//Test for branch
-				
+
+			
 			}
-        	
         });
     }
 }
