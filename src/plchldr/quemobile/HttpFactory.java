@@ -21,9 +21,9 @@ public class HttpFactory {
 				HttpPost loginPost = new HttpPost(url);
 				UrlEncodedFormEntity loginForm = new UrlEncodedFormEntity(postValues, HTTP.UTF_8);
 				loginPost.setEntity(loginForm);
-				HttpResponse response=client.execute(loginPost);
+				HttpResponse response = client.execute(loginPost);
 				InputStream isResponseData = response.getEntity().getContent();
-				BufferedReader buffer = new BufferedReader( new InputStreamReader(isResponseData, "UTF-8"));
+				BufferedReader buffer = new BufferedReader(new InputStreamReader(isResponseData, "UTF-8"));
 			    StringBuilder sb = new StringBuilder();
 			    String responseString;
 			    while(true )

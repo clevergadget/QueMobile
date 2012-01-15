@@ -45,7 +45,7 @@ public class QueMobileActivity extends Activity {
 	
 					if(userProxy.checkLogin(username.getText().toString(), password.getText().toString()))
 					{
-						
+						String yup = "worked";
 					}
 					
 
