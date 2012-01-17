@@ -31,7 +31,7 @@ public class UserProxy {
 	
 	static public String getQuestionsForUser(String userId) throws ClientProtocolException, IOException
 	{
-		String url = "http://scope-resolution.org/que/scripts/questions_for_user.php";
+		String url = "http://www.scope-resolution.org/que/scripts/get_questions_for_user.php";
 		List<NameValuePair> postValues = new ArrayList<NameValuePair>();
 		postValues.add(new BasicNameValuePair("username", ""));
 		postValues.add(new BasicNameValuePair("password", ""));
