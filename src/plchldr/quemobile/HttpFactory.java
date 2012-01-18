@@ -13,9 +13,11 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class HttpFactory {
-	
 	
 	public static String HttpPostString(List postValues, String url) throws ParseException, IOException
 	{
@@ -37,6 +39,12 @@ public class HttpFactory {
 		loginPost.setEntity(loginForm);
 		HttpResponse response=client.execute(loginPost);
 		String test = EntityUtils.toString(response.getEntity());
+	    try {
+	    	JSONArray jsonArrayResults = new JSONArray(test);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return test;
 	}
 
